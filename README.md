@@ -40,24 +40,48 @@
 ## Execução:
 - Testar a API: Utilize o Postman ou outra ferramenta para realizar as requisições. Aqui estão alguns exemplos de requisições que podem ser feitas:
   
-## Criar um novo contato:
-- Método: POST
-- URL: http://localhost:8080/api/contacts
-- Listar todos os contatos:
+## Endpoints da API:
 
-## Método: GET
-- URL: http://localhost:8080/api/contacts
-- Buscar um contato por ID:
+1. Adicionar um Contato
+- POST /api/contacts
+  
+2. Listar Todos os Contatos
+- GET /api/contacts
+- Retorna: Uma lista de todos os contatos armazenados.
 
- ## Método: GET
-- URL: http://localhost:8080/api/contacts/{id}
-- Atualizar um contato:
+3. Buscar um Contato por ID
+- GET /api/contacts/{id}
+- Substitua {id} pelo ID do contato.
+- Retorna: O contato correspondente ao ID fornecido, ou 404 Not Found se o contato não for encontrado.
 
-## Método: PUT
-- URL: http://localhost:8080/api/contacts/{id}
+4. Buscar Contato por Nome
+- GET /api/contacts/search/name/{name}
+- Substitua {name} pelo nome do contato que deseja buscar.
+- Retorna: Uma lista de contatos correspondentes ao nome fornecido, ou 404 Not Found se nenhum contato for encontrado.
 
-## Deletar um contato:
+5. Buscar Contato por Número de Telefone
+- GET /api/contacts/search/phone/{phoneNumber}
+- Substitua {phoneNumber} pelo número de telefone do contato.
+- Retorna: Uma lista de contatos correspondentes ao número de telefone fornecido, ou 404 Not Found se nenhum contato for encontrado.
 
-## Método: DELETE
- - URL: http://localhost:8080/api/contacts/{id}
+6. Atualizar um Contato
+- PUT /api/contacts/{id}
+- Substitua {id} pelo ID do contato.
+- Retorna: O contato atualizado, ou 404 Not Found se o contato não for encontrado.
+
+7. Remover um Contato por ID
+- DELETE /api/contacts/{id}
+- Substitua {id} pelo ID do contato que deseja remover.
+- Retorna: 204 No Content se o contato for removido com sucesso, ou 404 Not Found se o contato não for encontrado.
+
+8. Remover Contato por Nome
+- DELETE /api/contacts/delete/name/{name}
+- Substitua {name} pelo nome do contato que deseja remover.
+- Retorna: 204 No Content se o contato for removido com sucesso, ou 404 Not Found se nenhum contato com esse nome for encontrado.
+
+9. Remover Contato por Número de Telefone
+- DELETE /api/contacts/delete/phone/{phoneNumber}
+- Substitua {phoneNumber} pelo número de telefone do contato que deseja remover.
+- Retorna: 204 No Content se o contato for removido com sucesso, ou 404 Not Found se nenhum contato com esse número de telefone for encontrado.
+
 
